@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+
+    <link rel="icon" href="{% static "images/favicon.ico" %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static "images/favicon.ico" %}" type="image/x-icon">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div>
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">
+                    <img src="{% static "/images/ITF_official_logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                    海淀区国际跆拳道协会
+                </a>
+            </nav>
+        </div>
+    </header>
+    <article>
+        {% block content %}{% endblock %}
+    </article>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static "/js/jquery-3.3.1.slim.min.js" %}"></script>
+    <script src="{% static "/js/bootstrap.bundle.min.js" %}"></script>
+</body>
+</html>
