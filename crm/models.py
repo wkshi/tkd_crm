@@ -16,8 +16,6 @@ class Gym(models.Model):
 class Member(models.Model):
     # 默认成员编号
     # id = models.AutoField()
-    # 登记成员编号
-    serial = models.CharField(max_length=8)
     # 注册日期
     registration_date = models.DateField(auto_now=True)
     # 有效日期
@@ -65,10 +63,11 @@ class Member(models.Model):
         (u'9', u'9th Dan (Koo Dan) Black Belt 黑带九段')
     )
     belt = models.CharField(max_length=4, choices=BELT_CHOICES, default=None)
+    # 查询密码
     password = models.CharField(max_length=32, default=None)
 
     def __str__(self):
-        return self.serial \
+        return str(self.id) \
                + ' ' + self.name \
                + ' ' + self.gender \
                + ' ' + str(self.birthday) \
