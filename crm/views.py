@@ -24,5 +24,12 @@ class Query(View):
             if int(form.data.get("query_id")) <= Member.objects.count():
                 member = Member.objects.get(id=form.data.get("query_id"))
                 if member.password == form.data.get("password"):
+                    # return result
                     return HttpResponse('/success/')
+                else:
+                    # Wrong password
+                    pass
+            else:
+                # Wrong id
+                pass
         return render(request, self.template_name, {'form': form})
